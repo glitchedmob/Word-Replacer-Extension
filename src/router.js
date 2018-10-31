@@ -1,20 +1,19 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Popover from './views/Popover.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/popover',
       name: 'Popover',
-      component: Popover
+      component: () => import(/* webpackChunkName: "popover" */ './views/Popover.vue'),
     },
     {
       path: '/options',
       name: 'Options',
-      component: () => import(/* webpackChunkName: "about" */ './views/Options.vue')
-    }
-  ]
-})
+      component: () => import(/* webpackChunkName: "about" */ './views/Options.vue'),
+    },
+  ],
+});
