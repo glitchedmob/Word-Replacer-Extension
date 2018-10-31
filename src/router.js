@@ -6,16 +6,16 @@ import Options from './views/Options.vue';
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
-      path: '/popover',
-      name: 'Popover',
-      component: Popover,
-    },
-    {
-      path: '/options',
-      name: 'Options',
-      component: Options,
-    },
-  ],
+    routes: [
+        {
+            path: '/popover',
+            name: 'Popover',
+            component: Popover,
+        },
+        {
+            path: '/options',
+            name: 'Options',
+            component: Options,
+        },
+    ],
 });

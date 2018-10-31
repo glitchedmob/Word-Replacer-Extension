@@ -1,10 +1,15 @@
 <template>
-  <div class="options">
-  </div>
+    <div class="options">
+        <replacements-manager />
+    </div>
 </template>
 
 <script>
+    import ReplacementsManager from '../components/ReplacementsManager.vue';
 
-export default {
-}
+    export default {
+        components: {
+            ReplacementsManager,
+        }
+    };
 </script>

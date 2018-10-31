@@ -1,11 +1,9 @@
 <template>
-  <div class="popover">
-  </div>
+    <div class="popover">
+    </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {};
 </script>
 
