@@ -71,16 +71,24 @@
         data: () => ({
             newKey: '',
             newValue: '',
-            words: {
-                test: 'test'
-            },
+            words: {},
         }),
         computed: {
             totalWords() {
                 return Object.keys(this.words).length;
             },
         },
+        created() {
+            chrome.runtime.sendMessage({ type: 'getWords' }, words => {
+                if(words) {
+                    this.words = words;
+                }
+            });
+        },
         methods: {
+            saveWords() {
+                chrome.runtime.sendMessage({ type: 'saveWords', words: this.words });
+            },
             addWord() {
                 this.words = {
                     ...this.words,
@@ -89,11 +97,13 @@
 
                 this.newKey = '';
                 this.newValue = '';
+                this.saveWords();
             },
 
             removeWord(key) {
                 const { [key]: removed, ...words } = this.words;
                 this.words = words;
+                this.saveWords();
             }
         }
     };
