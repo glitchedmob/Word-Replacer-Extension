@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Popover from './views/Popover.vue';
+import Popup from './views/Popup.vue';
 import Options from './views/Options.vue';
 
 Vue.use(Router);
@@ -8,9 +8,9 @@ Vue.use(Router);
 export default new Router({
     routes: [
         {
-            path: '/popover',
-            name: 'Popover',
-            component: Popover,
+            path: '/popup',
+            name: 'Popup',
+            component: Popup,
         },
         {
             path: '/options',
