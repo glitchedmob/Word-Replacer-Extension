@@ -5,7 +5,7 @@ import findAndReplaceDOMText from 'findandreplacedomtext';
 function replaceWords(words) {
     if (Object.keys(words).length === 0) return;
 
-    for (var key in words) {
+    for (let key in words) {
         if (words.hasOwnProperty(key)) {
             findAndReplaceDOMText(document.body, {
                 find: new RegExp(key),
