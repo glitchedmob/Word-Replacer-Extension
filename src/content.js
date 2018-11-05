@@ -1,7 +1,8 @@
 import findAndReplaceDOMText from 'findandreplacedomtext';
 
 
-chrome.runtime.sendMessage({ type: 'getWords' }, words => {
+
+function replaceWords(words) {
     if (Object.keys(words).length === 0) return;
 
     for (var key in words) {
@@ -12,6 +13,6 @@ chrome.runtime.sendMessage({ type: 'getWords' }, words => {
             });
         }
     }
-});
+}
 
-
+chrome.runtime.sendMessage({ type: 'getWords' }, replaceWords);
