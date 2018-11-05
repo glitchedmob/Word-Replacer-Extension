@@ -14,4 +14,3 @@ function replaceWords(words) {
     }
 }
 
-chrome.runtime.sendMessage({ type: 'getWords' }, replaceWords);

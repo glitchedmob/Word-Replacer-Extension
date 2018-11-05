@@ -77,15 +77,11 @@
             },
         },
         created() {
-            chrome.runtime.sendMessage({ type: 'getWords' }, words => {
-                if(words) {
-                    this.words = words;
-                }
-            });
+            // fetch words
         },
         methods: {
             saveWords() {
-                chrome.runtime.sendMessage({ type: 'saveWords', words: this.words });
+                // save words
             },
             addWord() {
                 this.words = {
