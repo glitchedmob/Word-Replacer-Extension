@@ -1,7 +1,6 @@
 import findAndReplaceDOMText from 'findandreplacedomtext';
 
 
-
 function replaceWords(words) {
     if (Object.keys(words).length === 0) return;
 
